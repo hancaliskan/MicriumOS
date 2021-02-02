@@ -1,0 +1,97 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000                 THUMB
+    3 00000000         
+    4 00000000                 AREA             CODE, CODE, READONLY
+    5 00000000         
+    6 00000000         
+    7 00000000                 IMPORT           OS_CPU_PendSVHandler
+    8 00000000                 IMPORT           OS_CPU_SysTickHandler
+    9 00000000         
+   10 00000000         
+   11 00000000                 EXPORT           PendSV_Handler
+   12 00000000         PendSV_Handler
+   13 00000000 F7FF BFFE       B                OS_CPU_PendSVHandler
+   14 00000004 E7FE            B                .
+   15 00000006         
+   16 00000006                 EXPORT           SysTick_Handler
+   17 00000006         SysTick_Handler
+   18 00000006 F7FF BFFE       B                OS_CPU_SysTickHandler
+   19 0000000A E7FE            B                .
+   20 0000000C         
+   21 0000000C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\objects\cortex_m_port.d -o.\objects\cortex_m_port.o -I.\RT
+E\Device\STM32F411VETx -I.\RTE\RTOS -I.\RTE\_stm32f4 -IC:\Users\daiichi\AppData
+\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -IC:\Users\daiichi\AppData\
+Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Inc
+lude -IC:\Users\daiichi\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drive
+rs\STM32F4xx_HAL_Driver\Inc -IC:\Users\daiichi\AppData\Local\Arm\Packs\Micrium\
+RTOS\1.0.0\Software\uC-CPU -IC:\Users\daiichi\AppData\Local\Arm\Packs\Micrium\R
+TOS\1.0.0\Software\uC-CPU\ARM-Cortex-M4\RealView -IC:\Users\daiichi\AppData\Loc
+al\Arm\Packs\Micrium\RTOS\1.0.0\Software\uC-LIB -IC:\Users\daiichi\AppData\Loca
+l\Arm\Packs\Micrium\RTOS\1.0.0\Software\uCOS-III\Ports\ARM-Cortex-M4\Generic\Re
+alView -IC:\Users\daiichi\AppData\Local\Arm\Packs\Micrium\RTOS\1.0.0\Software\u
+COS-III\Source --predefine="__UVISION_VERSION SETA 533" --predefine="_RTE_ SETA
+ 1" --predefine="STM32F411xE SETA 1" --predefine="_RTE_ SETA 1" --list=.\listin
+gs\cortex_m_port.lst cortex_m_port.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CODE 00000000
+
+Symbol: CODE
+   Definitions
+      At line 4 in file cortex_m_port.s
+   Uses
+      None
+Comment: CODE unused
+PendSV_Handler 00000000
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 12 in file cortex_m_port.s
+   Uses
+      At line 11 in file cortex_m_port.s
+Comment: PendSV_Handler used once
+SysTick_Handler 00000006
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 17 in file cortex_m_port.s
+   Uses
+      At line 16 in file cortex_m_port.s
+Comment: SysTick_Handler used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+OS_CPU_PendSVHandler 00000000
+
+Symbol: OS_CPU_PendSVHandler
+   Definitions
+      At line 7 in file cortex_m_port.s
+   Uses
+      At line 13 in file cortex_m_port.s
+Comment: OS_CPU_PendSVHandler used once
+OS_CPU_SysTickHandler 00000000
+
+Symbol: OS_CPU_SysTickHandler
+   Definitions
+      At line 8 in file cortex_m_port.s
+   Uses
+      At line 18 in file cortex_m_port.s
+Comment: OS_CPU_SysTickHandler used once
+2 symbols
+339 symbols in table
